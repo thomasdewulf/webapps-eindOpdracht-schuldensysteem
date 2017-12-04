@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Debt} from './debt.model';
+import {Debt} from './../debt.model';
 import { DebtDataService } from '../debt-data.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class DebtComponent implements OnInit {
   constructor(private _debtDataService: DebtDataService) { }
 
   ngOnInit() {
-    
+
   }
 
 }

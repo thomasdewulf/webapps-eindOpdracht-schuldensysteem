@@ -1,14 +1,14 @@
-//UIt commentaar halen wanneer auth geimplementeerd is
-//import { AuthGuardService } from './../user/auth-guard.service';
+
+import { AuthGuardService } from './../user/auth-guard.service';
 import {NgModule} from '@angular/core';
-import{ RouterModule, Routes, PreloadAllModules} from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules} from '@angular/router';
 
 import {PageNotFoundComponent} from '../page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     {
 path: 'debt',
-//canActivate: [ AuthGaurdService],
+canActivate: [ AuthGuardService],
 loadChildren: '../debt/debt.module#DebtModule'
     },
     {path: '', redirectTo: 'debt/list', pathMatch: 'full'},
