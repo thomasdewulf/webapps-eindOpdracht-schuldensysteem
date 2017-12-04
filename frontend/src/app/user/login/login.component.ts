@@ -2,6 +2,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { NavbarService } from '../../navbar/navbar.service';
 
 
 function passwordValidator(): ValidatorFn {
@@ -19,14 +20,16 @@ function passwordValidator(): ValidatorFn {
 export class LoginComponent implements OnInit {
   public user: FormGroup;
   public errorMsg: string;
+ 
 
-  constructor(private authService: AuthenticationService, private router: Router, private fb: FormBuilder) { }
+  constructor(private authService: AuthenticationService, private router: Router, private fb: FormBuilder, public nav: NavbarService) { }
 
   ngOnInit() {
     this.user = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.nav.hide();
   }
 
   onSubmit() {
@@ -37,6 +40,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(this.authService.redirectUrl);
           this.authService.redirectUrl = undefined;
         } else {
+          this.nav.show();
           this.router.navigate(['/debt/list']);
         }
       }

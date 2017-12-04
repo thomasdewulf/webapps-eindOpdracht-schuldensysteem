@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './user/authentication.service';
-import { Observable } from 'rxjs/Observable';
-
 
 @Component({
   selector: 'app-root',
@@ -11,10 +8,8 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent implements OnInit {
   ngOnInit() { }
 
-  constructor(private authService: AuthenticationService){ }
+  constructor(){ }
 
-  get currentUser(): Observable<string> {
-    return this.authService.user$;
-  }
+ 
 
 }

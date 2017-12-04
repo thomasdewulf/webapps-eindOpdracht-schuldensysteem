@@ -1,14 +1,15 @@
+<div class="login-form">
 <form [formGroup]='user' (ngSubmit)='onSubmit()'>
-  <h3>login</h3>
-  <div>
-    <label for="username">username:</label>
-    <input type="text" id="username" formControlName='username'>
+  <div class="form-group">
+    <input type="text" id="username" formControlName='username' class="form-control login-field" placeholder="Gebruikersnaam">
+    <label for="username" class="login-field-icon fui-user" ></label>
   </div>
-  <div>
-    <label for="password">password:</label>
-    <input type="password" id="password" formControlName='password'>
+  <div class="form-group">
+    <input type="password" id="password" formControlName='password' class="form-control login-field" placeholder="Wachtwoord">
+    <label for="password" class="login-field-icon fui-lock"></label>
   </div>
-  <button type='submit' [disabled]='!user.valid'>log in</button>
+  <button type='submit' [disabled]='!user.valid' class="btn btn-primary btn-lg btn-block">Log in</button>
   <div *ngIf='errorMsg' >{{errorMsg}}</div>
 </form>
-<a routerLink="/register" >register</a>
+<a class="login-link" routerLink="/register" >Registreren</a>
+</div>
