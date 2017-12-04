@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "flatui/css/flat-ui.min.css",
+        "flatui/less/flat-ui.css",
         "styles.css"
       ],
       "scripts": [

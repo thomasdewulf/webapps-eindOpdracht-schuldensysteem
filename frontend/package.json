@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "lessc src/flatui/less/flat-ui.less src/flatui/less/flat-ui.css && ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,7 +23,9 @@
     "@angular/router": "^4.2.4",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "css-less-loader": "^0.1.0",
     "jquery": "^3.2.1",
+    "less": "^2.7.3",
     "rxjs": "^5.4.2",
     "tether": "^1.4.3",
     "zone.js": "^0.8.14"

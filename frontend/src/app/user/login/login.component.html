@@ -1,4 +1,6 @@
+<div class="login-screen">
 <div class="login-form">
+  <div>
 <form [formGroup]='user' (ngSubmit)='onSubmit()'>
   <div class="form-group">
     <input type="text" id="username" formControlName='username' class="form-control login-field" placeholder="Gebruikersnaam">
@@ -12,4 +14,6 @@
   <div *ngIf='errorMsg' >{{errorMsg}}</div>
 </form>
 <a class="login-link" routerLink="/register" >Registreren</a>
+</div>
+</div>
 </div>
