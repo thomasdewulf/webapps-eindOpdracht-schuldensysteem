@@ -1,23 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing/app-routing-module';
+import {DebtModule} from './debt/debt.module';
+
 import { AppComponent } from './app.component';
-import { DebtComponent } from './debt/debt.component';
-import { AddDebtComponent } from './add-debt/add-debt.component';
-import { DebtListComponent } from './debt-list/debt-list.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserModule} from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DebtComponent,
-    AddDebtComponent,
-    DebtListComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    UserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
