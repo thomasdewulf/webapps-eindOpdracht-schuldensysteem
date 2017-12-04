@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ngOnInit(){ }
+  ngOnInit() { }
 
   constructor(private authService: AuthenticationService){ }
 
