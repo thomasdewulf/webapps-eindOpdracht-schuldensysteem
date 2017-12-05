@@ -1,11 +1,19 @@
-
-
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">{{debt._title}}</div>
-  <div class="card-body">
-    <h4 class="card-title">Primary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="article border-bottom">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-2 date">
+          <div class="large">€{{debt._price}}</div>
+          
+          <div class="text-muted">{{debt._dateSpent | date:'dd-MMM'}}</div>
+        </div>
+        
+        <div class="col-10">
+          <h4><a href="#">{{debt._title}}</a></h4>
+          
+          <p>{{debt._description}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="clear"></div>
   </div>
-</div>
-

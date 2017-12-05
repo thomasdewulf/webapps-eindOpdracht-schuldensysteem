@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Injectable()
 export class TitleService {
 
-private _title$: BehaviorSubject<string>;
-constructor() { }
-
-// Can't use a setter :()
- setTitle$(title: string) {
-this._title$ = new BehaviorSubject<string>(title);
+  title: string;
+titleSubject: BehaviorSubject<string>;
+private titleSubscription: Subscription;
+constructor() {
+  this.titleSubject = new BehaviorSubject('Schulden 152e FOS De Kangoeroes');
 }
-
-get title$(): BehaviorSubject<string>
+setNewTitle(title: string)
 {
-  return this._title$;
+  this.titleSubject.next(title);
 }
+
 }

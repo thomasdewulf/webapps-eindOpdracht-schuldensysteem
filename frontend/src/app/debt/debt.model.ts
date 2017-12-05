@@ -22,6 +22,8 @@ export class Debt {
             this._price = price,
             this._dateSpent = dateSpent,
             this._dateEntered = dateEntered;
+
+           
     }
 
     toJSON() {

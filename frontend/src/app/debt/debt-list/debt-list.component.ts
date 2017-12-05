@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DebtDataService } from '../debt-data.service';
 import {Debt} from '../debt.model';
 import { NavbarService } from '../../ui/navbar/navbar.service';
+import { TitleService } from '../../ui/title.service';
 
 @Component({
   selector: 'app-debt-list',
@@ -12,11 +13,15 @@ import { NavbarService } from '../../ui/navbar/navbar.service';
 export class DebtListComponent implements OnInit {
 
   private _debts: Debt[];
-  constructor(private _debtDataService: DebtDataService, private _navbarService: NavbarService) { }
+  constructor(private _debtDataService: DebtDataService, private _navbarService: NavbarService, private _title: TitleService) {
+
+
+   }
 
   ngOnInit() {
     this._debtDataService.debts.subscribe(items => this._debts = items);
     this._navbarService.show();
+    this._title.setNewTitle('Alle schulden');
   }
 
   get debts()

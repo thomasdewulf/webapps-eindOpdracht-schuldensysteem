@@ -1,5 +1,14 @@
-<div class="container-fluid">
-  <div class="row">
-  <app-debt *ngFor="let localDebt of debts" [debt]="localDebt"></app-debt>
-  </div>
-  </div>
+
+      <div class="card mb-4">
+          <div class="card-block">
+            <h3 class="card-title">Je schulden en vorderingen</h3>
+         
+            <div class="divider" style="margin-top: 1rem;"></div>
+            
+            <div class="articles-container">
+             <app-debt *ngFor="let localDebt of debts" [debt]="localDebt"></app-debt>
+            </div>
+          </div>
+        </div>
+  
+ 

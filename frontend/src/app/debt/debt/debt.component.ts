@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Debt} from './../debt.model';
 import { DebtDataService } from '../debt-data.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-debt',
