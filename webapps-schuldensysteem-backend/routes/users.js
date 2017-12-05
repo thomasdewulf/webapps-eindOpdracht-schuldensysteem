@@ -3,7 +3,17 @@ var router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 let User = mongoose.model('User');
+let jwt = require('express-jwt');
+let auth = jwt({secret: process.env.RECIPE_BACKEND_SECRET, userProperty: 'payload'});
 
+
+router.get('/users', function(req, res, next) {
+  let query = User.find().populate('users');
+  query.exec(function(err, users) {
+    if (err) return next(err);
+    res.json(users);
+  })
+});
 
 router.post('/register', function(req, res, next){
   if(!req.body.username || !req.body.password){

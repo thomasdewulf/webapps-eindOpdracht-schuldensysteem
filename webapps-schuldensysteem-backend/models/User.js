@@ -5,7 +5,8 @@ let jwt = require('jsonwebtoken');
 let UserSchema = new mongoose.Schema({
     username: { type: String, lowercase: true, unique: true },
     hash: String,
-    salt: String
+    salt: String,
+    debts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Debt'}]
 });
 
 UserSchema.methods.setPassword = function (password) {
