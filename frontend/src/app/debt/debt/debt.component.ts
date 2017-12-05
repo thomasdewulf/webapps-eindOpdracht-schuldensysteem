@@ -5,7 +5,7 @@ import { DebtDataService } from '../debt-data.service';
 @Component({
   selector: 'app-debt',
   templateUrl: './debt.component.html',
-  styleUrls: ['./debt.component.css']
+  styleUrls: ['./debt.component.scss']
 })
 export class DebtComponent implements OnInit {
 

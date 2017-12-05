@@ -1,23 +1,21 @@
-<nav class="navbar navbar-inverse" role="navigation" *ngIf="nav.visible">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-5">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <a class="navbar-brand" href="#">Flat UI</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-5">
-      <ul class="nav navbar-nav">
-          <li><a  routerLinkActive='active' routerLink="debt/list" >Alle schulden</a></li>
-          <li><a  routerLinkActive='active' routerLink="debt/add" >Toevoegen</a></li>
-          <li><a *ngIf='(currentUser | async) else loginlink' routerLinkActive='active' routerLink="/logout">
+
+
+
+    <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-faded sidebar-style-1">
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> Brand.name</a></h1>
+				
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+				
+				<ul class="nav nav-pills flex-column sidebar-nav">
+				
+          <a class="nav-item nav-link"  routerLinkActive='active' routerLink="debt/list" >Alle schulden</a>
+          <a class="nav-item nav-link" routerLinkActive='active' routerLink="debt/add" >Toevoegen</a>
+          <a class="nav-item nav-link" *ngIf='(currentUser | async) else loginlink' routerLinkActive='active' routerLink="/logout">
             {{currentUser|async}}</a>
             <ng-template #loginlink>
-              <a routerLinkActive='active' routerLink="/login">log in</a>
+              <a class="nav-item nav-link" routerLinkActive='active' routerLink="/login">log in</a>
             </ng-template>
-          </li>
-       </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
+				</ul>
+				
+				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
