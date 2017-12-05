@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserModule} from './user/user.module';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { NavbarService } from './ui/navbar/navbar.service';
+import { TitleService } from './ui/title.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { NavbarService } from './ui/navbar/navbar.service';
     UserModule,
     AppRoutingModule
   ],
-  providers: [NavbarService],
+  providers: [
+    NavbarService,
+    TitleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
