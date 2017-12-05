@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from './navbar.service';
-import { AuthenticationService } from '../user/authentication.service';
+import { AuthenticationService } from '../../user/authentication.service';
 import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-navbar',

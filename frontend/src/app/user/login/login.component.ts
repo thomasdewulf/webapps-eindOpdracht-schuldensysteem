@@ -2,7 +2,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { NavbarService } from '../../navbar/navbar.service';
+import { NavbarService } from '../../ui/navbar/navbar.service';
 
 
 function passwordValidator(): ValidatorFn {

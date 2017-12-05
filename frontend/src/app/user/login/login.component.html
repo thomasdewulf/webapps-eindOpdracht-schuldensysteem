@@ -1,19 +1,47 @@
-<div class="login-screen">
-<div class="login-form">
-  <div>
-<form [formGroup]='user' (ngSubmit)='onSubmit()'>
-  <div class="form-group">
-    <input type="text" id="username" formControlName='username' class="form-control login-field" placeholder="Gebruikersnaam">
-    <label for="username" class="login-field-icon fui-user" ></label>
-  </div>
-  <div class="form-group">
-    <input type="password" id="password" formControlName='password' class="form-control login-field" placeholder="Wachtwoord">
-    <label for="password" class="login-field-icon fui-lock"></label>
-  </div>
-  <button type='submit' [disabled]='!user.valid' class="btn btn-primary btn-lg btn-block">Log in</button>
-  <div *ngIf='errorMsg' >{{errorMsg}}</div>
-</form>
-<a class="login-link" routerLink="/register" >Registreren</a>
+	<section class="row">
+      <div class="col-sm-12">
+        <section class="row">
+          <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-12">
+        <div class="card mb-12">
+          <div class="card-block">
+            <h3 class="card-title">Contact Form</h3>
+            
+ 
+            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+             <a class="login-link" routerLink="/register" >Registreren</a>
+            <form [formGroup]='user' (ngSubmit)='onSubmit()' class="form-horizontal" action="" method="post">
+              <fieldset>
+               
+                <div class="form-group">
+                  <label class="col-12 control-label" for="username">Username</label>   
+                  <div class="col-12">
+                    <input id="username" formControlName="username" type="text" placeholder="Username" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-12 control-label" for="password">Wachtwoord</label>
+                  
+                  <div class="col-12 ">
+                    <input id="password" formControlName="password" type="password" placeholder="Wachtwoord" class="form-control">
+                  </div>
+                </div>
+             
+                
+                <!-- Form actions -->
+                <div class="form-group">
+                  <div class="col-12 widget-right ">
+                    <button type="submit" [disabled]='!user.valid' class="btn btn-primary btn-md float-right">Log in</button>
+                  </div>
+                </div>
+                <div *ngIf='errorMsg' >{{errorMsg}}</div>
+              </fieldset>
+            </form>
+           
+          </div>
+        </div>
 </div>
 </div>
-</div>
+        </section>
+      </div>
+    </section>

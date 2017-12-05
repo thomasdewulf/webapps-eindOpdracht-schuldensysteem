@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserModule} from './user/user.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NavbarService } from './navbar/navbar.service';
+import { NavbarComponent } from './ui/navbar/navbar.component';
+import { NavbarService } from './ui/navbar/navbar.service';
 
 @NgModule({
   declarations: [

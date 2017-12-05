@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DebtDataService } from '../debt-data.service';
 import {Debt} from '../debt.model';
-import { NavbarService } from '../../navbar/navbar.service';
+import { NavbarService } from '../../ui/navbar/navbar.service';
 
 @Component({
   selector: 'app-debt-list',

@@ -3,6 +3,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl } from '@angular/forms';
+import { NavbarService } from '../../ui/navbar/navbar.service';
 
 
 
@@ -32,7 +33,13 @@ export class RegisterComponent implements OnInit {
     return <FormControl>this.user.get('passwordGroup').get('password');
   }
 
-  constructor(private authenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router,
+    private fb: FormBuilder,
+    private navbarService: NavbarService) {
+      navbarService.hide();
+     }
 
   ngOnInit() {
     this.user = this.fb.group({

@@ -10,7 +10,7 @@ import { DebtListComponent } from './debt-list/debt-list.component';
 
 import { DebtResolver } from './debt-resolver.service';
 import { DebtDetailComponent } from './debt-detail/debt-detail.component';
-import { NavbarService } from '../navbar/navbar.service';
+import { NavbarService } from '../ui/navbar/navbar.service';
 
 const routes = [
   { path: 'list', component: DebtListComponent },
