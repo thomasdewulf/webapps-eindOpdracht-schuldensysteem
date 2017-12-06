@@ -26,6 +26,10 @@ export class Debt {
            
     }
 
+    get price(): number {
+        return this._price;
+    }
+
     toJSON() {
         return {
             _id: this._id,
