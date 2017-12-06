@@ -1,3 +1,49 @@
-<p>
-  debt-detail-component works!
-</p>
+<div class="card mb-4">
+    <div class="card-block">
+      <h3 class="card-title text-center">{{debt.title}}</h3>
+       
+      <h6 class="card-subtitle mb-2 text-muted text-center">{{debt.description}}</h6>
+      
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge"><em class="fa fa-euro"></em></div>
+          
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h5 class="timeline-title mt-2">€{{debt.price}}</h5>
+            </div>
+            
+            <div class="timeline-body">
+              <p>Bedrag</p>
+            </div>
+          </div>  
+        </li>
+        <li>
+          <div class="timeline-badge"><em class="fa fa-calendar"></em></div>
+          
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h5 class="timeline-title mt-2">{{debt.dateSpent | date:'EEEE dd-MM-yyyy'}}</h5>
+            </div>
+            
+            <div class="timeline-body">
+              <p>Datum onstaan schuld of vordering</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><em class="fa fa-calendar"></em></div>
+          
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h5 class="timeline-title mt-2">{{debt.dateEntered | date:'EEEE dd-MM-yyyy'}}</h5>
+            </div>
+            
+            <div class="timeline-body">
+              <p>Datum ingave schuld of vordering</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

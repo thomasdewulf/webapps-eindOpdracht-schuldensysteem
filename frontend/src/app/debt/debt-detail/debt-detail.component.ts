@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Debt } from '../debt.model';
 import { ActivatedRoute } from '@angular/router';
 import { DebtDataService } from '../debt-data.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-debt-detail-component',

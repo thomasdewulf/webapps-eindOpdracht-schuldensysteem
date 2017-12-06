@@ -33,6 +33,18 @@ export class Debt {
         return this._title;
     }
 
+    get description(): string{
+        return this._description;
+    }
+
+    get dateSpent(): Date{
+        return this._dateSpent;
+    }
+
+    get dateEntered(): Date {
+        return this._dateEntered;
+    }
+
     toJSON() {
         return {
             _id: this._id,
