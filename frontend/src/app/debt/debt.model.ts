@@ -45,14 +45,15 @@ export class Debt {
         return this._dateEntered;
     }
 
+
     toJSON() {
         return {
             _id: this._id,
             title: this._title,
             description: this._description,
-            _price: this._price,
-            _dateEntered: this._dateEntered,
-            _dateSpent: this._dateSpent
+            price: this._price,
+            dateEntered: this._dateEntered,
+            dateSpent: this._dateSpent
         };
     }
 

@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var DebtSchema = new mongoose.Schema({
     title: String,
     description: String,
-    price: {type: Number, default: 0},
+    price: Number,
     dateEntered: Date,
     dateSpent: Date,
     imageUrl: String

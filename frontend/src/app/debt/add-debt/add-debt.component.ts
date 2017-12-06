@@ -41,14 +41,13 @@ export class AddDebtComponent implements OnInit {
       this.debt.value.description,
       this.debt.value.price,
       this.debt.value.dateSpent);
-
       // TODO valideren
      this.dataService.addNewDebt(debt).subscribe(res => {
        if (res) {
         this.activeModal.close();
        }
      });
-    console.log('called api ');
+
   }
 
 }

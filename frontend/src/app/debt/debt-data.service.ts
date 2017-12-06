@@ -11,10 +11,9 @@ export class DebtDataService {
 
   private _appUrl = 'http://localhost:4200/API/debts/';
   private currentUser: string;
-  constructor(private http: Http, private auth: AuthenticationService) { 
+  constructor(private http: Http, private auth: AuthenticationService) {
     this.auth.user$.subscribe(user => {
-      console.log(user);
-      this.currentUser = user;});
+      this.currentUser = user; });
   }
 
   get debts(): Observable<Debt[]> {
@@ -30,6 +29,7 @@ export class DebtDataService {
   }
 
   addNewDebt(debt): Observable<boolean> {
+    console.log(debt);
     return this.http.post(
       `${this._appUrl}${this.currentUser}`,
       debt,
@@ -37,6 +37,7 @@ export class DebtDataService {
       .map(res => res.json())
       .map(item => {
        const newDebt = Debt.fromJSON(item);
+       console.log(newDebt);
        if (newDebt) {
          return true;
        } else {

@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="col-12 control-label no-padding" for="title_id">Titel</label>
             <div class="col-12 no-padding">
-                <input type="text" id="title_id" formControlName='title' class="form-control">
+                <input id="title_id" formControlName='title' class="form-control">
             </div>
           <div class="text-danger" *ngIf='debt.get("title").errors?.required && debt.get("title").touched'>Dit veld is verplicht.</div>
         </div>
@@ -18,23 +18,23 @@
         <div class="form-group">
             <label class="col-12 control-label no-padding" for="description_id">Beschrijving</label>
             <div class="col-12 no-padding">
-                <textarea type="text" id="description_id" formControlName='description' class="form-control"></textarea>
+                <textarea  id="description_id" formControlName='description' class="form-control"></textarea>
             </div>
             <div class="text-danger" *ngIf='debt.get("description").errors?.required && debt.get("description").touched'>Dit veld is verplicht.</div>
           
         </div>
 
         <div class="form-group">
-            <label class="col-12 control-label no-padding" for="title_id">Bedrag</label>
+            <label class="col-12 control-label no-padding" for="price_id">Bedrag</label>
             <div class="col-12 no-padding">
-                <input type="text" id="price_id" formControlName='price' class="form-control">
+                <input  id="price_id" formControlName='price' class="form-control">
             </div>
             <div class="text-danger" *ngIf='debt.get("price").errors?.required && debt.get("price").touched'>Dit veld is verplicht.</div>
         </div>
         <div class="form-group">
-            <label class="col-12 control-label no-padding" for="title_id">Datum uitgave</label>
+            <label class="col-12 control-label no-padding" for="dateSpent_id">Datum uitgave</label>
             <div class="col-12 no-padding">
-                <input type="date" id="dateSpent_id" formControlName='dateSpent' class="form-control">
+                <input id="dateSpent_id" formControlName='dateSpent' class="form-control">
             </div>
             <div class="text-danger" *ngIf='debt.get("dateSpent").errors?.required && debt.get("dateSpent").touched'>Dit veld is verplicht.</div>
         </div>

@@ -54,7 +54,7 @@ router.post('/API/debts/', auth, function (req, res, next) {
 
   router.post('/API/debts/:user',auth,function(req,res,next){
     let debt = new Debt(req.body);
-
+    console.log(debt);
     debt.save(function (err, debt)
   {
     if(err){return next(err);}

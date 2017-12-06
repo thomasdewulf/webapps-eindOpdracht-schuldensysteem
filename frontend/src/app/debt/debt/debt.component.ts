@@ -22,7 +22,5 @@ export class DebtComponent implements OnInit {
   } else {
     this.priceColor = 'colorPositive';
   }
-
-  console.log(this.debt);
 }
 }
