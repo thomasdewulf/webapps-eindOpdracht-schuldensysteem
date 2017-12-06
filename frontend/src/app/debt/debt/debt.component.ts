@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Debt} from './../debt.model';
 import { DebtDataService } from '../debt-data.service';
 import {DatePipe, NgClass} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-debt',
@@ -12,6 +13,7 @@ export class DebtComponent implements OnInit {
 
   @Input() public debt: Debt;
             public priceColor: string;
+            public debtId: string;
   constructor(private _debtDataService: DebtDataService) { }
 
   ngOnInit() {
@@ -20,5 +22,7 @@ export class DebtComponent implements OnInit {
   } else {
     this.priceColor = 'colorPositive';
   }
+
+  console.log(this.debt);
 }
 }

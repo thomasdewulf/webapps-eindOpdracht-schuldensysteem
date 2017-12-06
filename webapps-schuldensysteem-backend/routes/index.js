@@ -34,8 +34,8 @@ router.post('/API/debts/', auth, function (req, res, next) {
     });
   });  
 
-  router.get('/API/recipe/:recipe', function(req, res) {
-    req.recipe.populate('debts', function(err, rec) {
+  router.get('/API/debts/:debt', function(req, res) {
+    req.debt.populate('debts', function(err, rec) {
       if (err) return next(err);
       res.json(rec);
     });

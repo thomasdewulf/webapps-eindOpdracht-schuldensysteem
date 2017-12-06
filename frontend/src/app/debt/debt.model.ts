@@ -17,17 +17,20 @@ export class Debt {
     }
 
     constructor(title: string, description: string, price: number, dateSpent: Date, dateEntered: Date = new Date()) {
-        this._title = title,
+            this._title = title,
             this._description = description,
             this._price = price,
             this._dateSpent = dateSpent,
             this._dateEntered = dateEntered;
-
-           
     }
 
     get price(): number {
         return this._price;
+    }
+
+
+    get title(): string {
+        return this._title;
     }
 
     toJSON() {

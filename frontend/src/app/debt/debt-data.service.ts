@@ -14,12 +14,12 @@ export class DebtDataService {
 
   get debts(): Observable<Debt[]> {
     return this.http.get(this._appUrl, {headers: new Headers({Authorization: `Bearer ${this.auth.token}`})}).map(response =>
-      response.json().map(item => new Debt(item.title, item.description, item.price, item.dateSpent, item.dateEntered))
+      response.json().map(item => Debt.fromJSON(item))
   );
   }
 
   getDebt(id): Observable<Debt> {
-    return this.http.get(`${this._appUrl}/debt/${id}`)
+    return this.http.get(`${this._appUrl}${id}`)
       .map(response => response.json()).map(item => Debt.fromJSON(item));
   }
 }
