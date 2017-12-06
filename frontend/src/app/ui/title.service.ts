@@ -10,7 +10,7 @@ export class TitleService {
 titleSubject: BehaviorSubject<string>;
 private titleSubscription: Subscription;
 constructor() {
-  this.titleSubject = new BehaviorSubject('Schulden 152e FOS De Kangoeroes');
+  this.titleSubject = new BehaviorSubject('Financiën');
 }
 setNewTitle(title: string)
 {

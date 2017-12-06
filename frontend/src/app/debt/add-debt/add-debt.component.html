@@ -27,14 +27,14 @@
         <div class="form-group">
             <label class="col-12 control-label no-padding" for="price_id">Bedrag</label>
             <div class="col-12 no-padding">
-                <input  id="price_id" formControlName='price' class="form-control">
+                <input type="number"  id="price_id" formControlName='price' class="form-control">
             </div>
             <div class="text-danger" *ngIf='debt.get("price").errors?.required && debt.get("price").touched'>Dit veld is verplicht.</div>
         </div>
         <div class="form-group">
             <label class="col-12 control-label no-padding" for="dateSpent_id">Datum uitgave</label>
             <div class="col-12 no-padding">
-                <input id="dateSpent_id" formControlName='dateSpent' class="form-control">
+                <input type="date" id="dateSpent_id" formControlName='dateSpent' class="form-control">
             </div>
             <div class="text-danger" *ngIf='debt.get("dateSpent").errors?.required && debt.get("dateSpent").touched'>Dit veld is verplicht.</div>
         </div>
