@@ -3,6 +3,9 @@ import { DebtDataService } from '../debt-data.service';
 import {Debt} from '../debt.model';
 import { NavbarService } from '../../ui/navbar/navbar.service';
 import { TitleService } from '../../ui/title.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DebtDetailComponent } from '../debt-detail/debt-detail.component';
+import { AddDebtComponent } from '../add-debt/add-debt.component';
 
 @Component({
   selector: 'app-debt-list',
@@ -13,7 +16,11 @@ import { TitleService } from '../../ui/title.service';
 export class DebtListComponent implements OnInit {
 
   private _debts: Debt[];
-  constructor(private _debtDataService: DebtDataService, private _navbarService: NavbarService, private _title: TitleService) {
+  constructor(
+    private _debtDataService: DebtDataService,
+    private _navbarService: NavbarService,
+    private _title: TitleService,
+    private modalService: NgbModal) {
 
 
    }
@@ -27,6 +34,10 @@ export class DebtListComponent implements OnInit {
   get debts()
   {
     return this._debts;
+  }
+
+  open() {
+    const modalRef = this.modalService.open(AddDebtComponent);
   }
 
 }

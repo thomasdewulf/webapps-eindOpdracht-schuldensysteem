@@ -13,6 +13,7 @@ import { DebtDetailComponent } from './debt-detail/debt-detail.component';
 import { NavbarService } from '../ui/navbar/navbar.service';
 import { TitleService } from '../ui/title.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddDebtComponent } from './add-debt/add-debt.component';
 
 const routes = [
   { path: 'list', component: DebtListComponent },
@@ -24,7 +25,8 @@ const routes = [
   declarations: [
     DebtComponent,
     DebtListComponent,
-    DebtDetailComponent
+    DebtDetailComponent,
+    AddDebtComponent
   ],
   imports: [
     HttpModule,
@@ -38,5 +40,8 @@ const routes = [
     DebtResolver,
     TitleService
   ],
+  entryComponents: [
+    AddDebtComponent
+  ]
 })
 export class DebtModule { }

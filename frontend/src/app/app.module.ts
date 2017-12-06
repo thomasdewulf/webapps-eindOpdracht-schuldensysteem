@@ -10,6 +10,7 @@ import { UserModule} from './user/user.module';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { NavbarService } from './ui/navbar/navbar.service';
 import { TitleService } from './ui/title.service';
+import { AddDebtComponent } from './debt/add-debt/add-debt.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TitleService } from './ui/title.service';
     NavbarService,
     TitleService
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

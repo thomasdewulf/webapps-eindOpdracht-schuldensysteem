@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-debt',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDebtComponent implements OnInit {
 
-  constructor() { }
+  name = 'Thomas';
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
   }
