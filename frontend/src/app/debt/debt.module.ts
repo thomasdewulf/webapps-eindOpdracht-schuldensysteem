@@ -12,6 +12,7 @@ import { DebtResolver } from './debt-resolver.service';
 import { DebtDetailComponent } from './debt-detail/debt-detail.component';
 import { NavbarService } from '../ui/navbar/navbar.service';
 import { TitleService } from '../ui/title.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes = [
   { path: 'list', component: DebtListComponent },
@@ -29,7 +30,8 @@ const routes = [
     HttpModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgbModule
   ],
   providers: [
     DebtDataService,
