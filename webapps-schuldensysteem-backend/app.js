@@ -19,7 +19,7 @@ require('./config/passport');
 var app = express();
 
 //Connecteren met mongoDB
-mongoose.connect('mongodb://localhost/debtdb',{
+mongoose.connect(process.env.SCHULDEN_DATABASE,{
   useMongoClient:true
 });
 

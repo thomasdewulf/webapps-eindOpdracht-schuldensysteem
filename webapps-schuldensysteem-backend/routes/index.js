@@ -7,7 +7,7 @@ let Debt = mongoose.model('Debt');
 let User = mongoose.model('User');
 
 
-let auth = jwt({secret: process.env.RECIPE_BACKEND_SECRET, userProperty: 'payload'});
+let auth = jwt({secret: process.env.SCHULDEN_BACKEND_SECRET, userProperty: 'payload'});
 
 router.get('/API/debts/', auth, function(req, res, next) {
   let query = Debt.find().sort('dateSpent').populate('debts');
