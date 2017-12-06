@@ -34,7 +34,7 @@
         <div class="form-group">
             <label class="col-12 control-label no-padding" for="title_id">Datum uitgave</label>
             <div class="col-12 no-padding">
-                <input type="text" id="dateSpent_id" formControlName='dateSpent' class="form-control">
+                <input type="date" id="dateSpent_id" formControlName='dateSpent' class="form-control">
             </div>
             <div class="text-danger" *ngIf='debt.get("dateSpent").errors?.required && debt.get("dateSpent").touched'>Dit veld is verplicht.</div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
            
             <div class="col-12 no-padding widget-right">
-                 <button class="btn btn-primary btn-md float-right" type="submit" [disabled]="!debt.valid">Toevoegen</button>
+                 <button class="btn btn-primary btn-md float-right" type="submit"  [disabled]="!debt.valid">Toevoegen</button>
             </div>
           
         </div>

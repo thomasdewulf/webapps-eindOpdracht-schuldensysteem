@@ -35,11 +35,9 @@ router.post('/API/debts/', auth, function (req, res, next) {
     });
   });  
 
-  router.param('user', function(req,res,next,id)
-{
-let query = User.findById(id);
-
-query.exec(function(err,user){
+  router.param('user', function(req,res,next,username) {
+  let query = User.findOne({'username':username});
+  query.exec(function(err,user){
   if(err){return next(err);}
   if(!user){return next(new Error('Not found ' + id));}
   req.user = user;
@@ -54,13 +52,13 @@ query.exec(function(err,user){
     });
   });
 
-  router.post('/API/debts/:user',function(req,res,next){
+  router.post('/API/debts/:user',auth,function(req,res,next){
     let debt = new Debt(req.body);
 
     debt.save(function (err, debt)
   {
     if(err){return next(err);}
-    
+
     req.user.debts.push(debt);
     req.user.save(function(err,rec){
       if(err){return next(err);}
