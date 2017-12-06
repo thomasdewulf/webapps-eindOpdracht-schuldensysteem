@@ -5,7 +5,51 @@
     </button>
   </div>
   <div class="modal-body">
-    <p>Hello, {{name}}!</p>
+    <form [formGroup]='debt' (ngSubmit)='onSubmit()' class="form-horizontal">
+      <fieldset>
+        <div class="form-group">
+            <label class="col-12 control-label no-padding" for="title_id">Titel</label>
+            <div class="col-12 no-padding">
+                <input type="text" id="title_id" formControlName='title' class="form-control">
+            </div>
+          
+        </div>
+
+        <div class="form-group">
+            <label class="col-12 control-label no-padding" for="description_id">Beschrijving</label>
+            <div class="col-12 no-padding">
+                <textarea type="text" id="description_id" formControlName='description' class="form-control"></textarea>
+            </div>
+          
+        </div>
+
+        <div class="form-group">
+            <label class="col-12 control-label no-padding" for="title_id">Bedrag</label>
+            <div class="col-12 no-padding">
+                <input type="text" id="price_id" formControlName='price' class="form-control">
+            </div>
+          
+        </div>
+        <div class="form-group">
+            <label class="col-12 control-label no-padding" for="title_id">Datum uitgave</label>
+            <div class="col-12 no-padding">
+                <input type="text" id="dateSpent_id" formControlName='dateSpent' class="form-control">
+            </div>
+          
+        </div>
+      
+        <div class="form-group">
+           
+            <div class="col-12 no-padding widget-right">
+                 <button class="btn btn-primary btn-md float-right" type="submit">Toevoegen</button>
+            </div>
+          
+        </div>
+
+       
+      </fieldset>
+    </form>
+    
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>

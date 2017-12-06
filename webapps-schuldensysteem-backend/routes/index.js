@@ -4,6 +4,7 @@ let mongoose = require('mongoose');
 let jwt = require('express-jwt');
 
 let Debt = mongoose.model('Debt');
+let User = mongoose.model('User');
 
 
 let auth = jwt({secret: process.env.RECIPE_BACKEND_SECRET, userProperty: 'payload'});
@@ -34,10 +35,37 @@ router.post('/API/debts/', auth, function (req, res, next) {
     });
   });  
 
-  router.get('/API/debts/:debt', function(req, res) {
+  router.param('user', function(req,res,next,id)
+{
+let query = User.findById(id);
+
+query.exec(function(err,user){
+  if(err){return next(err);}
+  if(!user){return next(new Error('Not found ' + id));}
+  req.user = user;
+  return next();
+});
+});
+
+  router.get('/API/debts/:debt',auth, function(req, res) {
     req.debt.populate('debts', function(err, rec) {
       if (err) return next(err);
       res.json(rec);
     });
+  });
+
+  router.post('/API/debts/:user',function(req,res,next){
+    let debt = new Debt(req.body);
+
+    debt.save(function (err, debt)
+  {
+    if(err){return next(err);}
+    
+    req.user.debts.push(debt);
+    req.user.save(function(err,rec){
+      if(err){return next(err);}
+      res.json(debt);
+    });
+  });
   });
 module.exports = router;
