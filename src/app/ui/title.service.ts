@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Injectable()
 export class TitleService {
 
-  title: string;
+title: string;
 titleSubject: BehaviorSubject<string>;
 private titleSubscription: Subscription;
 constructor() {
