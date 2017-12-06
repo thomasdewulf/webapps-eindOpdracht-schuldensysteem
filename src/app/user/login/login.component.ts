@@ -20,9 +20,7 @@ function passwordValidator(): ValidatorFn {
 export class LoginComponent implements OnInit {
   public user: FormGroup;
   public errorMsg: string;
- 
-
-  constructor(private authService: AuthenticationService, private router: Router, private fb: FormBuilder, public nav: NavbarService) { }
+ constructor(private authService: AuthenticationService, private router: Router, private fb: FormBuilder, public nav: NavbarService) { }
 
   ngOnInit() {
     this.user = this.fb.group({
@@ -44,6 +42,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/debt/list']);
         }
       }
-    }, err => this.errorMsg = err.json().message);
+    }, err => this.errorMsg = err);
   }
 }

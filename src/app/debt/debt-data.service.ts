@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class DebtDataService {
 
-  private _appUrl = 'http://localhost:4200/API/debts/';
+  private _appUrl = '/API/debts/';
   private currentUser: string;
   constructor(private http: Http, private auth: AuthenticationService) {
     this.auth.user$.subscribe(user => {

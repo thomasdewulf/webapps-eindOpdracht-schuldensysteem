@@ -26,6 +26,7 @@ export class AuthenticationService {
   login(username: string, password: string): Observable<boolean> {
     return this.http.post(`${this._url}/login`, { username: username, password: password })
       .map(res => res.json()).map(res => {
+        console.log(res);
         const token = res.token;
         if (token) {
           localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
