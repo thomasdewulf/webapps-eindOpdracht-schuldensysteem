@@ -23,6 +23,14 @@ export class DebtDataService {
 
   }
 
+  getDebtForUser(): Observable<Debt[]> {
+    return this.http.get(`${this._appUrl}user/${this.currentUser}`,
+     {headers: new Headers({Authorization: `Bearer ${this.auth.token}`})}).map(response =>
+      response.json().map(item => Debt.fromJSON(item))
+  );
+
+  }
+
   getDebt(id): Observable<Debt> {
     return this.http.get(`${this._appUrl}${id}`, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`})})
       .map(response => response.json()).map(item => Debt.fromJSON(item));
