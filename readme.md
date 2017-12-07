@@ -21,3 +21,8 @@ Systeem voor leiding van 152e FOS De Kangoeroes om hun schulden en vorderingen a
 - Aanduiden van schuld/vordering als (terug)betaald.
 - Foto van rekening uploaden
 - Weergeven totaalschuld/totaalvordering
+
+
+## Acknowledgements
+
+- Theme: [https://medialoot.com/item/bootstrap-4-admin-dashboard-template/](https://medialoot.com/item/bootstrap-4-admin-dashboard-template/)
