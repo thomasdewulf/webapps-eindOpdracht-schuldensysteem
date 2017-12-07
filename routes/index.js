@@ -9,6 +9,7 @@ let User = mongoose.model('User');
 
 let auth = jwt({secret: process.env.SCHULDEN_BACKEND_SECRET, userProperty: 'payload'});
 
+// Schulden voor alle gebruikers ophalen.
 router.get('/API/debts/', auth, function(req, res, next) {
   let query = Debt.find().sort('dateSpent').populate('debts');
   query.exec(function(err, debts) {
@@ -17,17 +18,7 @@ router.get('/API/debts/', auth, function(req, res, next) {
   })
 });
 
-
-
-
-router.post('/API/debts/', auth, function (req, res, next) {
-  let debt = new Debt({title: req.body.title, description: req.body.description, price: req.body.price, dateEntered: req.body.dateEntered, dateSpent: req.body.dateSpent});
-  debt.save(function(err, post) {
-          if (err){ return next(err); }
-          res.json(debt);
-      });
-  });
-
+  // Id parameter voor teruggeven specifieke schuld.
   router.param('debt', function(req, res, next, id) {
     let query = Debt.findById(id);
     query.exec(function (err, debt){
@@ -38,6 +29,7 @@ router.post('/API/debts/', auth, function (req, res, next) {
     });
   });  
 
+  //Username parameter voor ophalen specifieke gebruiker
   router.param('user', function(req,res,next,username) {
   let query = User.findOne({'username':username});
   query.exec(function(err,user){
@@ -48,6 +40,7 @@ router.post('/API/debts/', auth, function (req, res, next) {
 });
 });
 
+  //teruggeven van een specifieke schuld.
   router.get('/API/debts/:debt',auth, function(req, res) {
     req.debt.populate('debts', function(err, rec) {
       if (err) return next(err);
@@ -55,6 +48,7 @@ router.post('/API/debts/', auth, function (req, res, next) {
     });
   });
 
+  //Teruggeven van schulden voor een gebruiker.
   router.get('/API/debts/user/:user', auth, function(req, res, next) {
  
     req.user.populate('debts', function(err,rec){
@@ -63,6 +57,7 @@ router.post('/API/debts/', auth, function (req, res, next) {
     })
   });
 
+  // Schuld toevoegen voor een gebruiker.
   router.post('/API/debts/:user',auth,function(req,res,next){
     let debt = new Debt(req.body);
     console.log(debt);
