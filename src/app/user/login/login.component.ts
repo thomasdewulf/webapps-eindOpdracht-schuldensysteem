@@ -42,6 +42,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/debt/list']);
         }
       }
-    }, err => this.errorMsg = err.message);
+    }, err => this.errorMsg = err.json().message);
   }
 }
