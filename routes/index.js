@@ -17,6 +17,9 @@ router.get('/API/debts/', auth, function(req, res, next) {
   })
 });
 
+
+
+
 router.post('/API/debts/', auth, function (req, res, next) {
   let debt = new Debt({title: req.body.title, description: req.body.description, price: req.body.price, dateEntered: req.body.dateEntered, dateSpent: req.body.dateSpent});
   debt.save(function(err, post) {
@@ -50,6 +53,14 @@ router.post('/API/debts/', auth, function (req, res, next) {
       if (err) return next(err);
       res.json(rec);
     });
+  });
+
+  router.get('/API/debts/user/:user', auth, function(req, res, next) {
+ 
+    req.user.populate('debts', function(err,rec){
+      if(err) return next(err);
+      res.json(rec.debts);
+    })
   });
 
   router.post('/API/debts/:user',auth,function(req,res,next){

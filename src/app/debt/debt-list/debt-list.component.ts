@@ -16,6 +16,7 @@ import { AddDebtComponent } from '../add-debt/add-debt.component';
 export class DebtListComponent implements OnInit {
 
   private _debts: Debt[];
+  private _debtsNew: Debt[];
   constructor(
     private _debtDataService: DebtDataService,
     private _navbarService: NavbarService,
@@ -24,8 +25,10 @@ export class DebtListComponent implements OnInit {
     }
 
   ngOnInit() {
-    this._debtDataService.debts.subscribe(items => this._debts = items);
+   
+  
     this._navbarService.show();
+    this.updateDebts();
     this._title.setNewTitle('Alle schulden');
   }
 
@@ -34,9 +37,14 @@ export class DebtListComponent implements OnInit {
     return this._debts;
   }
 
+  private updateDebts()
+  {
+    this._debtDataService.getDebtForUser().subscribe(items => this._debts = items);
+  }
+
   open() {
     const modalRef = this.modalService.open(AddDebtComponent).result.then(item => {
-      this._debtDataService.debts.subscribe(items => this._debts = items);
+      this.updateDebts();
     });
 
   }
