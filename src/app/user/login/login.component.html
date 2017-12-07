@@ -33,7 +33,7 @@
                     <button type="submit" [disabled]='!user.valid' class="btn btn-primary btn-md float-right">Log in</button>
                   </div>
                 </div>
-                <div *ngIf='errorMsg' >{{errorMsg}}</div>
+                <div class="text-danger" *ngIf='errorMsg' >{{errorMsg}}</div>
               </fieldset>
             </form>
            
