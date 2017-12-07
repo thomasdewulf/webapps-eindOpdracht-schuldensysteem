@@ -5,16 +5,14 @@
     <div class="col-sm-12 col-md-12">
         <div class="card mb-12">
           <div class="card-block">
-            <h3 class="card-title">Contact Form</h3>
+            <h3 class="card-title">Log in</h3>
+          
             
- 
-            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
-             <a class="login-link" routerLink="/register" >Registreren</a>
             <form [formGroup]='user' (ngSubmit)='onSubmit()' class="form-horizontal" action="" method="post">
               <fieldset>
                
                 <div class="form-group">
-                  <label class="col-12 control-label" for="username">Username</label>   
+                  <label class="col-12 control-label" for="username">Gebruikersnaam</label>   
                   <div class="col-12">
                     <input id="username" formControlName="username" type="text" placeholder="Username" class="form-control">
                   </div>
@@ -31,10 +29,11 @@
                 <!-- Form actions -->
                 <div class="form-group">
                   <div class="col-12 widget-right ">
+                      <a class="login-link btn btn-primary btn-md" routerLink="/register" >Registreren</a>
                     <button type="submit" [disabled]='!user.valid' class="btn btn-primary btn-md float-right">Log in</button>
                   </div>
                 </div>
-                <div *ngIf='errorMsg' >{{errorMsg}}</div>
+                <div class="text-danger" *ngIf='errorMsg' >{{errorMsg}}</div>
               </fieldset>
             </form>
            

@@ -24,6 +24,10 @@ export class Debt {
             this._dateEntered = dateEntered;
     }
 
+    get id(): string {
+        return this._id;
+    }
+
     get price(): number {
         return this._price;
     }

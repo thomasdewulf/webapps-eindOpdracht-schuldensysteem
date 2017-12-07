@@ -17,10 +17,10 @@ private titleSubscription: Subscription;
  
 }
 
-  constructor(private _nav: NavbarService, private _titleService: TitleService, private _auth: AuthenticationService) { 
+  constructor(public _nav: NavbarService, private _titleService: TitleService, private _auth: AuthenticationService) { 
     this.titleSubscription = this._titleService.titleSubject.subscribe((newTitle) => {
       this._title = newTitle;
-      console.log(this._title);
+     
     });
   }
 
