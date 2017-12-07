@@ -1,14 +1,23 @@
-# How to run
+# Schuldensysteem 152e FOS De Kangoeroes
 
-## Frontend
+Production url: [https://schulden-dekangoeroes.herokuapp.com/](https://schulden-dekangoeroes.herokuapp.com/);
 
-`npm start`
+## Wat
 
-## Backend
+Systeem voor leiding van 152e FOS De Kangoeroes om hun schulden en vorderingen aan de scouts te beheren
 
-1. Zorg ervoor dat MongoDB geïnstalleerd is en draait.
+### Huidige features
 
-`mongod`
+- Lijst weergeven van huidige vorderingen en schulden
+- Details weergeven schuld/vordering
+- Nieuwe schuld/vordering toevoegen
+- Inloggen
+- Registreren
 
-2. `npm install`
-3. `npm start`
+
+### TODO
+
+- Admin
+- Aanduiden van schuld/vordering als (terug)betaald.
+- Foto van rekening uploaden
+- Weergeven totaalschuld/totaalvordering
