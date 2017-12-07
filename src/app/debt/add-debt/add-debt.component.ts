@@ -45,6 +45,7 @@ export class AddDebtComponent implements OnInit {
      this.dataService.addNewDebt(debt).subscribe(res => {
        if (res) {
         this.activeModal.close();
+        this._router.navigate(['debt/list']);
        }
      });
 

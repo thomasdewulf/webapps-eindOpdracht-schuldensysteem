@@ -21,9 +21,7 @@ export class DebtListComponent implements OnInit {
     private _navbarService: NavbarService,
     private _title: TitleService,
     private modalService: NgbModal) {
-
-
-   }
+    }
 
   ngOnInit() {
     this._debtDataService.debts.subscribe(items => this._debts = items);
@@ -37,7 +35,10 @@ export class DebtListComponent implements OnInit {
   }
 
   open() {
-    const modalRef = this.modalService.open(AddDebtComponent);
+    const modalRef = this.modalService.open(AddDebtComponent).result.then(item => {
+      this._debtDataService.debts.subscribe(items => this._debts = items);
+    });
+
   }
 
 }
