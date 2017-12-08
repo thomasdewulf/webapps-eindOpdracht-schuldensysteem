@@ -102,3 +102,4 @@ typings/
 # dotenv environment variables file
 .env
 app-env
+app-env.spec
